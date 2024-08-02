@@ -53,12 +53,12 @@ class _HomePageState extends State<HomePage> {
                   //user input -> expense name
                   TextField(
                     controller: nameController,
-                    decoration: const InputDecoration(hintText: " name"),
+                    decoration: const InputDecoration(hintText: "Name"),
                   ),
                   //user input -> expense amount
                   TextField(
                     controller: amountController,
-                    decoration: const InputDecoration(hintText: " amount"),
+                    decoration: const InputDecoration(hintText: "Amount"),
                   )
                 ],
               ),
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
       }).toList();
       // return UI
       return Scaffold(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.grey.shade50,
           floatingActionButton: FloatingActionButton(
             onPressed: openNewExpenseBox,
             child: const Icon(Icons.add),
@@ -207,8 +207,7 @@ class _HomePageState extends State<HomePage> {
                       itemCount: currentMonthExpenses.length,
                       itemBuilder: (context, index) {
                         // reverse the index to show latest item first
-                        int reversedIndex =
-                            currentMonthExpenses.length - 1 - index;
+                        int reversedIndex = currentMonthExpenses.length - 1 - index;
                         //get individual expense
 
                         Expense individuaExpense = currentMonthExpenses[index];

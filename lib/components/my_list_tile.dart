@@ -27,21 +27,26 @@ class MyListTile extends StatelessWidget {
             icon: Icons.settings,
             backgroundColor: Colors.grey,
             foregroundColor: Colors.white,
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4)
+          ),
+          SizedBox(
+            width: 8,
           ),
           SlidableAction(
             onPressed: onDeletePressed,
-            icon: Icons.settings,
+            icon: Icons.delete_outline,
             backgroundColor: Colors.red,
             foregroundColor: Colors.white,
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(8),
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           )
         ],
       ),
       child: Container(
         decoration: BoxDecoration(
             color: Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(4)),
+            borderRadius: BorderRadius.circular(8)),
         margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
         child: ListTile(
           title: Text(title),

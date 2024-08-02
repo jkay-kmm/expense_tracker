@@ -93,7 +93,9 @@ class _MyBargraphState extends State<MyBargraph> {
                             backDrawRodData: BackgroundBarChartRodData(
                                 show: true,
                                 toY: calculateMax(),
-                                color: Colors.white))
+                                color: Colors.white
+                            )
+                        )
                       ],
                     ),
                   )
@@ -117,40 +119,40 @@ Widget getBottomTitles(double value, TitleMeta meta) {
   String text;
   switch (value.toInt() % 12) {
     case 0:
-      text = 'j';
-      break;
-    case 1:
-      text = 'F';
-      break;
-    case 2:
-      text = 'M';
-      break;
-    case 3:
       text = 'A';
       break;
+    case 1:
+      text = 'B';
+      break;
+    case 2:
+      text = 'C';
+      break;
+    case 3:
+      text = 'D';
+      break;
     case 4:
-      text = 'm';
+      text = 'E';
       break;
     case 5:
-      text = 'r';
+      text = 'F';
       break;
     case 6:
-      text = 'y';
+      text = 'G';
       break;
     case 7:
-      text = 'z';
+      text = 'H';
       break;
     case 8:
-      text = 'g';
+      text = 'K';
       break;
     case 9:
-      text = 'w';
+      text = 'L';
       break;
     case 10:
-      text = 'p';
+      text = 'M';
       break;
     case 11:
-      text = 'm';
+      text = 'N';
       break;
 
     default:
