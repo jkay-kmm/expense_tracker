@@ -7,10 +7,14 @@ class Expense {
   final String name;
   final double amount;
   final DateTime date;
+  final String username;
+  final String password;
 
   Expense({
     required this.name,
     required this.amount,
     required this.date,
+    required this.username,
+    required this.password,
   });
 }

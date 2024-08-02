@@ -28,7 +28,7 @@ class MyListTile extends StatelessWidget {
             backgroundColor: Colors.grey,
             foregroundColor: Colors.white,
             borderRadius: BorderRadius.circular(8),
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4)
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           ),
           SizedBox(
             width: 8,
@@ -39,7 +39,7 @@ class MyListTile extends StatelessWidget {
             backgroundColor: Colors.red,
             foregroundColor: Colors.white,
             borderRadius: BorderRadius.circular(8),
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           )
         ],
       ),
@@ -47,7 +47,7 @@ class MyListTile extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(8)),
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: ListTile(
           title: Text(title),
           trailing: Text(trailing),

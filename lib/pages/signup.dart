@@ -19,22 +19,23 @@ class SignUp extends StatelessWidget {
   }
 
   Widget _buildBodyPage() {
-    return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildIconSplash(),
-          _buildTextSplash(),
-          const SizedBox(
-            height: 56,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildIconSplash(),
+              _buildTextSplash(),
+            ],
           ),
-          // _buildButtomGoogle(),
-          // SizedBox(height: 12),
-          // _buildButtomApple(),
-
-        ],
-      ),
+        ),
+        _buildButtomGoogle(),
+        const SizedBox(height: 12), // Thêm khoảng cách nhỏ giữa hai nút
+        _buildButtomApple(),
+        const SizedBox(height: 20), // Thêm khoảng cách giữa nút Apple và đáy màn hình
+      ],
     );
   }
 
@@ -80,91 +81,86 @@ class SignUp extends StatelessWidget {
     );
   }
 
-  // Widget _buildButtomGoogle() {
-  //   return Padding(
-  //     padding: const EdgeInsets.all(48),
-  //     child: SizedBox(
-  //       width: double.infinity,
-  //       child: ElevatedButton(
-  //         onPressed: () {},
-  //         style: ElevatedButton.styleFrom(
-  //             backgroundColor: const Color(0xFFFFFFFF),
-  //             shape: RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(4),
-  //                 side: const BorderSide(
-  //                   color: Color(0xFFBDBDBD),
-  //                 ))),
-  //         child: Row(
-  //           mainAxisAlignment: MainAxisAlignment.center,
-  //           crossAxisAlignment: CrossAxisAlignment.center,
-  //           children: [
-  //             Image.asset(
-  //               "assets/images/google.png",
-  //               width: 24,
-  //               height: 24,
-  //               fit: BoxFit.contain,
-  //             ),
-  //             Container(
-  //               margin: const EdgeInsets.only(left: 10),
-  //               child: const Text(
-  //                 "Sign up with Google",
-  //                 style: TextStyle(
-  //                   fontSize: 14,
-  //                   color: Color(0xFF424242),
-  //                 ),
-  //               ),
-  //             ),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
-//
+  Widget _buildButtomGoogle() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 48),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFFFFFFF),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                  side: const BorderSide(
+                    color: Color(0xFFBDBDBD),
+                  ))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/google.png",
+                width: 24,
+                height: 24,
+                fit: BoxFit.contain,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 10),
+                child: const Text(
+                  "Sign up with Google",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF424242),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-// Widget _buildButtomApple(){
-//   return Column(
-//     children: [
-//       Padding(
-//         padding: const EdgeInsets.all(48),
-//         child: SizedBox(
-//           width: double.infinity,
-//           child: ElevatedButton(
-//             onPressed: () {},
-//             style: ElevatedButton.styleFrom(
-//                 backgroundColor: const Color(0xFFFFFFFF),
-//                 shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(4),
-//                     side: const BorderSide(
-//                       color: Color(0xFFBDBDBD),
-//                     ))),
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 Image.asset(
-//                   "assets/images/apple.png",
-//                   width: 24,
-//                   height: 24,
-//                   fit: BoxFit.contain,
-//                 ),
-//                 Container(
-//                   margin: const EdgeInsets.only(left: 10),
-//                   child: const Text(
-//                     "Sign up with Apple",
-//                     style: TextStyle(
-//                       fontSize: 14,
-//                       color: Color(0xFF424242),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     ],
-//   );
-// }
+  Widget _buildButtomApple() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 48),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFFFFFFF),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                  side: const BorderSide(
+                    color: Color(0xFFBDBDBD),
+                  ))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+
+              Image.asset(
+                "assets/images/apple.png",
+                width: 24,
+                height: 24,
+                fit: BoxFit.contain,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 10),
+                child: const Text(
+                  "Sign up with Apple",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF424242),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
-// }

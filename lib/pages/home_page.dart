@@ -46,19 +46,20 @@ class _HomePageState extends State<HomePage> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("New expense"),
+              title: Text("Tạo mới"),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   //user input -> expense name
                   TextField(
                     controller: nameController,
-                    decoration: const InputDecoration(hintText: "Name"),
+                    decoration: const InputDecoration(hintText: "Tên mục"),
                   ),
                   //user input -> expense amount
                   TextField(
                     controller: amountController,
-                    decoration: const InputDecoration(hintText: "Amount"),
+                    decoration: const InputDecoration(hintText: "Giá"
+                        ""),
                   )
                 ],
               ),
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Edit expense"),
+              title: Text("Chỉnh sửa"),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Delete expense"),
+              title: Text("Xóa"),
               actions: [
                 // cancel button
                 _cancelButton(),
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
       }).toList();
       // return UI
       return Scaffold(
-          backgroundColor: Colors.grey.shade50,
+          backgroundColor: Colors.grey.shade100,
           floatingActionButton: FloatingActionButton(
             onPressed: openNewExpenseBox,
             child: const Icon(Icons.add),
@@ -199,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                       }),
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 // Expense list ui
                 Expanded(
@@ -238,7 +239,7 @@ class _HomePageState extends State<HomePage> {
         nameController.clear();
         amountController.clear();
       },
-      child: const Text("Cancel"),
+      child: const Text("Hủy bỏ"),
     );
   }
   // Save button -> create new expense
@@ -255,7 +256,7 @@ class _HomePageState extends State<HomePage> {
           Expense newExpense = Expense(
               name: nameController.text,
               amount: converStringToDouble(amountController.text),
-              date: DateTime.now());
+              date: DateTime.now(), username: '', password: '');
 
           //save to db
           await context.read<ExpenseDatabase>().createNewExpense(newExpense);
@@ -268,7 +269,7 @@ class _HomePageState extends State<HomePage> {
           amountController.clear();
         }
       },
-      child: const Text("Save"),
+      child: const Text("Lưu"),
     );
   }
 
@@ -287,7 +288,7 @@ class _HomePageState extends State<HomePage> {
               amount: amountController.text.isNotEmpty
                   ? converStringToDouble(amountController.text)
                   : expense.amount,
-              date: DateTime.now());
+              date: DateTime.now(), username: '', password: '');
 
           //old expense id
           int existingId = expense.id;
@@ -301,7 +302,7 @@ class _HomePageState extends State<HomePage> {
           refreshData();
         }
       },
-      child: const Text("Save"),
+      child: const Text("Lưu"),
     );
   }
 
@@ -319,7 +320,7 @@ class _HomePageState extends State<HomePage> {
         // refresh graph
         refreshData();
       },
-      child: const Text("Delete"),
+      child: const Text("Xóa"),
     );
   }
 }
